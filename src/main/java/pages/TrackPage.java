@@ -7,14 +7,14 @@ import org.openqa.selenium.WebElement;
 
 public class TrackPage extends BasePage {
 
-    private final By playButtonSelector = By.cssSelector(Locators.PLAY_BUTTON);
-    private final By pauseButtonSelector = By.cssSelector(Locators.PAUSE_BUTTON);
+    private final By playButton = By.cssSelector(Locators.PLAY_BUTTON);
+    private final By pauseButton = By.cssSelector(Locators.PAUSE_BUTTON);
 
 
-    private By shareButtonSelector = By.cssSelector(".trackPage__shareButton");
-    private By shareLinkSelector = By.cssSelector(".shareDialog__copyLink input");
-    private By shortenedLinkSelector = By.cssSelector(".shareDialog__shortenedLink");
-    private By embeddedSectionSelector = By.cssSelector(".trackPage__embedSection");
+    private final By shareButton = By.cssSelector(Locators.SHARE_BUTTON);
+    private final By shareLinkSelector = By.cssSelector(".shareDialog__copyLink input");
+    private final By shortenedButton = By.cssSelector(Locators.SHORTENED_LINK);
+    private final By embeddedButton = By.cssSelector(Locators.EMBEDDED_SECTION);
 
 
     public TrackPage(WebDriver driver) {
@@ -22,33 +22,31 @@ public class TrackPage extends BasePage {
     }
 
     public String getShareLink() {
-        WebElement shareButton = driver.findElement(shareButtonSelector);
-        shareButton.click();
-
+        click(shareButton);
         WebElement shareLinkElement = driver.findElement(shareLinkSelector);
         return shareLinkElement.getAttribute("value");
     }
 
     public String getShortenedLink() {
-        WebElement shortenedLinkElement = driver.findElement(shortenedLinkSelector);
-        return shortenedLinkElement.getText();
+        click(shortenedButton);
+        return shortenedButton.findElement(driver).getText();
     }
 
     public String getEmbeddedSection() {
-        WebElement embeddedSectionElement = driver.findElement(embeddedSectionSelector);
-        return embeddedSectionElement.getText();
+        click(embeddedButton);
+        return embeddedButton.findElement(driver).getText();
     }
 
     public void playTrack() {
-        click(playButtonSelector);
+        click(playButton);
     }
 
     public boolean isPlayerDisplayed() {
-        return driver.findElement(playButtonSelector).isDisplayed();
+        return driver.findElement(playButton).isDisplayed();
     }
 
     public boolean isPauseButtonVisible() {
-        return driver.findElement(pauseButtonSelector).isDisplayed();
+        return driver.findElement(pauseButton).isDisplayed();
     }
 
 }

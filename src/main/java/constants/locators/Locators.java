@@ -20,5 +20,7 @@ public class Locators {
     // Track Page Locators
     public static final String PLAY_BUTTON = "//*[@id=\"content\"]/div/div[2]/div/div[2]/div[2]/div/div/div[1]/a";
     public static final String PAUSE_BUTTON = "//*[@id=\"content\"]/div/div[2]/div/div[2]/div[2]/div/div/div[1]/a";
-    public static final String SHARE_BUTTON = "button.share-button";
+    public static final String SHARE_BUTTON = "//*[@id=\"content\"]/div/div/div[3]/div/div/div/ul/li[1]/div/div/div/div[2]/div[4]/div[1]/div/div/button[3]";
+    public static final String SHORTENED_LINK = "//*[@id=\"dropdown-button-18311\"]/div/div/div/div/div[2]/div[1]/article/div/section/div[2]/label[3]/span";
+    public static final String EMBEDDED_SECTION = "//*[@id=\"dropdown-button-18311\"]/div/div/div/div/div[1]/ul/li[2]/a";
 }
