@@ -19,6 +19,5 @@ public class PlayTrackTest extends BaseTest {
         Assert.assertTrue(trackPage.isPauseButtonVisible(), "Pause button is not visible");
         Assert.assertTrue(trackPage.isShuffleButtonVisible(), "Shuffle button is not visible");
 
-        // Add more assertions for other player buttons and functionality
     }
 }

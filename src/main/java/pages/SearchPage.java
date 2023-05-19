@@ -1,15 +1,16 @@
 package pages;
 
+import constants.locators.Locators;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import java.util.List;
-
 public class SearchPage extends BasePage {
 
-    private By searchOptionSelector = By.cssSelector(".searchResultsHeader__options .sc-button");
-    private By searchResultsSelector = By.cssSelector(".searchResult");
+    private final By tracksButton = By.xpath(Locators.TRACKS_BUTTON);
+    private final By filterByTagButton = By.xpath(Locators.TAG_BUTTON);
+    private final By searchResultsSelector = By.xpath(Locators.RESULT_LIST);//jnj
+    private final By tagOfTrack = By.xpath(Locators.TAG_OF_TRACK);
 
     public SearchPage(WebDriver driver) {
         super(driver);
@@ -30,19 +31,13 @@ public class SearchPage extends BasePage {
     }
 
     public void filterResultsByTag(String tag) {
-        WebElement tagElement = driver.findElement(By.xpath("//a[@title='" + tag + "']"));
-        tagElement.click();
+        click(tracksButton);
+        click(filterByTagButton);
     }
 
-    public boolean areSearchResultsFilteredByTag(String tag) {
-        List<WebElement> results = driver.findElements(searchResultsSelector);
-        for (WebElement result : results) {
-            String resultTags = result.getAttribute("data-tags");
-            if (!resultTags.contains(tag)) {
-                return false;
-            }
-        }
-        return true;
+    public String getTag() {
+        final WebElement element = tagOfTrack.findElement(driver);
+        return element.getText();
     }
 
     public TrackPage clickFirstTrack() {

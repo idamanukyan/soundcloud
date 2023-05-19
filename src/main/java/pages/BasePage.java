@@ -17,16 +17,16 @@ public class BasePage {
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
-    public void waitVisibility(By elementBy){
+    public void waitVisibility(By elementBy) {
         wait.until(ExpectedConditions.visibilityOfElementLocated(elementBy));
     }
 
-    public void click(By elementBY){
+    public void click(By elementBY) {
         waitVisibility(elementBY);
         driver.findElement(elementBY).click();
     }
 
-    public void writeText(By elementBy, String text){
+    public void writeText(By elementBy, String text) {
         waitVisibility(elementBy);
         driver.findElement(elementBy).sendKeys(text);
     }
