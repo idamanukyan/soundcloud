@@ -1,3 +1,11 @@
-#Project Description:
+Project Description:
 
-This project is a test automation framework for a web application. It utilizes Selenium WebDriver and Java to automate various test scenarios on the application. The framework follows a Page Object Model (POM) design pattern to enhance the maintainability and reusability of the test code. It includes test classes that cover different functionalities of the application, such as searching for songs, filtering search results, and playing tracks. The framework also includes a base test class that provides common setup and teardown methods for initializing and closing the WebDriver instance. With this test automation framework, you can easily execute automated tests to validate the functionality and user experience of the web application.
+This project focuses on testing various functionalities of the SoundCloud web application. It utilizes Selenium WebDriver and Java to automate test scenarios that cover different aspects of the application. The following functionalities are tested:
+
+Search Functionality: Automated tests are performed to validate the search functionality of SoundCloud. This includes submitting search queries and verifying the correctness of search results.
+
+Filtering Search Results: Test cases are executed to verify the effectiveness of filtering search results based on different criteria such as tags, genres, or other parameters.
+
+Track Playback: Automated tests are conducted to ensure the smooth playback of tracks. This includes initiating track playback, verifying the presence of player controls, and validating the pause functionality.
+
+The framework follows the Page Object Model (POM) design pattern to improve test code maintainability and reusability. Test classes are provided to cover different functionalities, and a base test class is included for easy setup and teardown of the WebDriver instance.
