@@ -1,0 +1,3 @@
+#Project Description:
+
+This project is a test automation framework for a web application. It utilizes Selenium WebDriver and Java to automate various test scenarios on the application. The framework follows a Page Object Model (POM) design pattern to enhance the maintainability and reusability of the test code. It includes test classes that cover different functionalities of the application, such as searching for songs, filtering search results, and playing tracks. The framework also includes a base test class that provides common setup and teardown methods for initializing and closing the WebDriver instance. With this test automation framework, you can easily execute automated tests to validate the functionality and user experience of the web application.
