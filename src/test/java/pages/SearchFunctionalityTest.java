@@ -2,24 +2,16 @@ package pages;
 
 import constants.urls.Links;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+import utility.TestListener;
 
 /**
  * This class contains tests to validate the search functionality of the SoundCloud website.
  * It extends the BaseTest class, which provides the setup and driver initialization.
  */
-
+@Listeners(TestListener.class)
 public class SearchFunctionalityTest extends BaseTest {
-
-    /**
-     * The setup method that runs once before the test class.
-     * It initializes the driver using the setUp() method from the BaseTest class.
-     */
-    @BeforeClass
-    public void getDriver() {
-        setUp();
-    }
 
     /**
      * Test case to verify a valid search query.

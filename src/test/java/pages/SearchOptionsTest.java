@@ -2,8 +2,9 @@ package pages;
 
 import constants.urls.Links;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+import utility.TestListener;
 
 /**
  * This class represents a test suite for testing the search options functionality on the SoundCloud web application.
@@ -11,16 +12,9 @@ import org.testng.annotations.Test;
  * It extends the BaseTest class to inherit the common setup and driver initialization.
  */
 
+@Listeners(TestListener.class)
 public class SearchOptionsTest extends BaseTest {
 
-    /**
-     * The setup method that runs once before the test class.
-     * It initializes the driver using the setUp() method from the BaseTest class.
-     */
-    @BeforeClass
-    public void getDriver() {
-        setUp();
-    }
 
     /**
      * Test method to verify the functionality of selecting the "Everything" search option.

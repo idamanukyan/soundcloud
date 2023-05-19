@@ -2,24 +2,17 @@ package pages;
 
 import constants.urls.Links;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+import utility.TestListener;
 
 /**
  * This class represents a test case for playing the first song on the application.
  * <p>
  * It extends the BaseTest class to inherit the common setup and driver initialization.
  */
+@Listeners(TestListener.class)
 public class PlayTrackTest extends BaseTest {
-
-    /**
-     * The setup method that runs once before the test class.
-     * It initializes the driver using the setUp() method from the BaseTest class.
-     */
-    @BeforeClass
-    public void getDriver() {
-        setUp();
-    }
 
     /**
      * Test method to verify playing the first song functionality.

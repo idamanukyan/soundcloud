@@ -2,13 +2,16 @@ package pages;
 
 import constants.urls.Links;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+import utility.TestListener;
 
 /**
  * This class represents a test for sharing a track on the SoundCloud web application.
  * <p>
  * It extends the BaseTest class to inherit the common setup and driver initialization.
  */
+@Listeners(TestListener.class)
 public class ShareTrackTest extends BaseTest {
     /**
      * Test method to verify the functionality of sharing a track.

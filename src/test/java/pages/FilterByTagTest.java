@@ -2,21 +2,15 @@ package pages;
 
 import constants.urls.Links;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+import utility.TestListener;
 
 /**
  * This class contains test cases for filtering search results by tag.
  */
+@Listeners(TestListener.class)
 public class FilterByTagTest extends BaseTest {
-
-    /**
-     * Sets up the driver before the test class.
-     */
-    @BeforeClass
-    public void getDriver() {
-        setUp();
-    }
 
     /**
      * Tests the filtering of search results by tag.
