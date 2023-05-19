@@ -11,6 +11,7 @@ public class SearchPage extends BasePage {
     private final By filterByTagButton = By.xpath(Locators.TAG_BUTTON);
     private final By searchResultsSelector = By.xpath(Locators.RESULT_LIST);//jnj
     private final By tagOfTrack = By.xpath(Locators.TAG_OF_TRACK);
+    private final By firstTrack = By.xpath(Locators.FIRST_TRACK);
 
     public SearchPage(WebDriver driver) {
         super(driver);
@@ -41,8 +42,7 @@ public class SearchPage extends BasePage {
     }
 
     public TrackPage clickFirstTrack() {
-        WebElement firstTrack = driver.findElement(searchResultsSelector);
-        firstTrack.click();
+        click(firstTrack);
         return new TrackPage(driver);
     }
 }

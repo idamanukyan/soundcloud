@@ -28,15 +28,9 @@ public class FilterByTagTest extends BaseTest {
     public void testFilterByTag() {
         HomePage homePage = new HomePage(driver);
         homePage.getHomePage(Links.BASE_PAGE);
-
-        // Perform a search
         homePage.submitSearch("Rammstein");
         SearchPage searchPage = new SearchPage(driver);
-
-        // Filter the search results by tag
         searchPage.filterResultsByTag("rock");
-
-        // Assert that the filtered results have the expected tag
         Assert.assertEquals(searchPage.getTag(), "Rock");
     }
 

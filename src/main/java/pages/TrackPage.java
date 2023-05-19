@@ -1,19 +1,21 @@
 package pages;
 
+import constants.locators.Locators;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class TrackPage extends BasePage {
 
+    private final By playButtonSelector = By.cssSelector(Locators.PLAY_BUTTON);
+    private final By pauseButtonSelector = By.cssSelector(Locators.PAUSE_BUTTON);
+
+
     private By shareButtonSelector = By.cssSelector(".trackPage__shareButton");
     private By shareLinkSelector = By.cssSelector(".shareDialog__copyLink input");
     private By shortenedLinkSelector = By.cssSelector(".shareDialog__shortenedLink");
     private By embeddedSectionSelector = By.cssSelector(".trackPage__embedSection");
-    private By playerSelector = By.cssSelector(".player");
-    private By playButtonSelector = By.cssSelector(".player__playButton");
-    private By pauseButtonSelector = By.cssSelector(".player__pauseButton");
-    private By shuffleButtonSelector = By.cssSelector(".player__shuffleButton");
+
 
     public TrackPage(WebDriver driver) {
         super(driver);
@@ -37,16 +39,11 @@ public class TrackPage extends BasePage {
         return embeddedSectionElement.getText();
     }
 
-    public void playFirstSong() {
-        WebElement playButton = driver.findElement(playButtonSelector);
-        playButton.click();
+    public void playTrack() {
+        click(playButtonSelector);
     }
 
     public boolean isPlayerDisplayed() {
-        return driver.findElement(playerSelector).isDisplayed();
-    }
-
-    public boolean isPlayButtonVisible() {
         return driver.findElement(playButtonSelector).isDisplayed();
     }
 
@@ -54,7 +51,4 @@ public class TrackPage extends BasePage {
         return driver.findElement(pauseButtonSelector).isDisplayed();
     }
 
-    public boolean isShuffleButtonVisible() {
-        return driver.findElement(shuffleButtonSelector).isDisplayed();
-    }
 }
